@@ -18,7 +18,7 @@ type ChatListProps = {
 export const ChatList: React.FC<ChatListProps> = ({ data }) => {
   const theme = useTheme();
   return (
-      <Stack gap={2} width={1000}>
+      <Stack gap={2}>
         {data.map((item, index) => (
           <ChatItem
             key={index}
