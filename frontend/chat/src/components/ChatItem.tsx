@@ -32,7 +32,7 @@ const SelfMessage: React.FC<ChatItemProps> = ({
   timestamp,
 }) => (
   <Stack spacing={2} alignItems="flex-end">
-    <Stack direction="row" spacing={2} maxWidth={'85%'}>
+    <Stack direction="row" spacing={2} maxWidth={"85%"}>
       <Stack spacing={1} direction="row">
         <TimeStamp>{timestamp}</TimeStamp>
         <Box
@@ -42,7 +42,14 @@ const SelfMessage: React.FC<ChatItemProps> = ({
             borderRadius: 4,
           }}
         >
-          <Typography color="whitesmoke">{message}</Typography>
+          <Typography
+            color="whitesmoke"
+            sx={{
+              wordBreak: "break-all", // Stop long words from overflowing the cat
+            }}
+          >
+            {message}
+          </Typography>
         </Box>
       </Stack>
       <Avatar alt={name} src={avatarSrc} />
@@ -57,7 +64,7 @@ const OtherMessage: React.FC<ChatItemProps> = ({
   timestamp,
 }) => (
   <Stack spacing={2} alignItems="flex-start">
-    <Stack direction="row" spacing={2} maxWidth={'85%'}>
+    <Stack direction="row" spacing={2} maxWidth={"85%"}>
       <Avatar alt={name} src={avatarSrc} />
       <Stack spacing={1} direction="row">
         <Box
@@ -67,7 +74,14 @@ const OtherMessage: React.FC<ChatItemProps> = ({
             borderRadius: 4,
           }}
         >
-          <Typography color="whitesmoke">{message}</Typography>
+          <Typography
+            color="whitesmoke"
+            sx={{
+              wordBreak: "break-all", // Stop long words from overflowing the cat
+            }}
+          >
+            {message}
+          </Typography>
         </Box>
         <TimeStamp>{timestamp}</TimeStamp>
       </Stack>
